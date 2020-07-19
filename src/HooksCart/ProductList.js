@@ -1,6 +1,6 @@
 import React, { useContext} from 'react'
 import ContextCart from './ContextCart'
-import {Button,Header,Table,Icon} from 'semantic-ui-react'
+import {Button,Header,Table} from 'semantic-ui-react'
 
 
 const ProductList = (props)=>{
@@ -23,12 +23,12 @@ const ProductList = (props)=>{
                            </Header>  
                        </Table.Cell>
                        <Table.Cell textAlign='right'>{products.price}</Table.Cell>
-                       <Table.Cell textAlign='right'><Button color="green" onClick={()=> {
+                       <Table.Cell textAlign='right'><Button color="green" icon="add" onClick={()=> {
                            
                            dispatch({type: 'ADD', payload: products})
                            state.info.splice(index, 1)
                            
-                           }}> <Icon name='add'/></Button></Table.Cell>
+                           }}></Button></Table.Cell>
                    </Table.Row>
                    ) 
            }))
